@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# --- Data directories (large, generated) ---
+# Processed ML tensors (output of `python -m ibm_qec.data.prepare`)
+processed_data/
+processed_validation/
+# Raw experiment archives (consolidation sources / Zenodo bundles)
+results/
+results_*/
+zenodo_upload/
+
+# Model checkpoints
+models/
+
+# Evaluation results
+evaluation/
+
+# Generated output
+example/example_model.pth
+example/sample_data/best_decoder_*.pth
+*.zip
+*.lnk
+mode_summary.tex
+validation_results.json
+
+# Deprecated / untracked
+deprecated/
+deprecated_files/
+untracked/
+plots/
+debugging_visualizations/
+
+# Test artifacts
+results_testing_ml/
+
+# --- Consolidated raw experiment data ---
+# The ~23 GB of hardware snapshots are distributed via Zenodo and rebuilt locally
+# with scripts/consolidate_data.py. Only the schema doc and the index are tracked.
+experiment_data/*
+!experiment_data/README.md
+!experiment_data/index.csv
+
+# Zenodo upload bundles (built locally)
+zenodo_upload/
+
+# Generated figures
+visualizations/

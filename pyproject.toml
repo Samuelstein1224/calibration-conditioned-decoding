@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ibm-qec"
+version = "0.1.0"
+description = "ML-based quantum error correction decoding with FiLM-conditioned GNN + Conv2D models, trained on real IBM quantum hardware."
+requires-python = ">=3.10"
+license = "Apache-2.0"
+readme = "README.md"
+
+dependencies = [
+    "torch>=2.0",
+    "torch_geometric",
+    "numpy",
+    "matplotlib",
+    "qiskit>=1.0",
+    "qiskit-aer",
+    "qiskit-ibm-runtime",
+    "pymatching",
+    "stim",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+analysis = [
+    "torchviz",
+    "graphviz",
+]
+tensorrt = [
+    "torch-tensorrt",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests that run the density-matrix simulator (deselect with '-m \"not slow\"')",
+]
